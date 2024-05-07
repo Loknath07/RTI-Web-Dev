@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTI Patient Questionnaire</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .center-text {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+    <style>
+        .divide {
+            width: 45%;
+            display: inline-block;
+        }
+    
+        .divide-group:nth-child(even) {
+            margin-left: 1%;
+        }
+    
+        .divide-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+    </style>   
+
+
+
+<div class="container">
+    <h1 class="center-text">RTI Patient Questionnaire</h1>
+    <p class="center-text">All answers contained in this questionnaire are strictly confidential and will become part of your medical record.</p>
+    <form>
+        <div class="form-group">
+            <label for="hospitalName">Hospital Name:</label>
+            <input type="text" class="form-control" id="hospitalName" placeholder="Enter Hospital Name">
+        </div>
+        <div class="form-group">
+            <label for="hospitalID">Hospital ID:</label>
+            <input type="text" class="form-control" id="hospitalID" placeholder="Enter Hospital ID">
+        </div>
+        <div class="form-group">
+            <label for="dateOfEntry">Date of Entry:</label>
+            <input type="date" class="form-control" id="dateOfEntry">
+        </div>
+        <div class="form-group">
+            <label for="uniqueID">Unique De-identified ID:</label>
+            <input type="text" class="form-control" id="uniqueID" placeholder="Enter Unique De-identified ID">
+        </div>
+    <div>
+        <h2>Personal Data</h2>
+        
+        <div class="form-group">
+            <label for="patientName">Patient Name:</label>
+            <input type="text" class="form-control" id="patientName" placeholder="Enter Patient Name">
+        </div>
+        <div class="form-group">
+            <label for="patientAge">Patient Age:</label>
+            <input type="number" class="form-control" id="patientAge" placeholder="Enter Patient Age">
+        </div>
+        <div class="form-group">
+            <label>Gender:</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                <label class="form-check-label" for="male">
+                    Male
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                <label class="form-check-label" for="female">
+                    Female
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="other" value="other">
+                <label class="form-check-label" for="other">
+                    Other
+                </label>
+            </div>
+        </div>
+
+        <div id="femaleOptions" style="display: none;">
+            <div class="form-group">
+                <label>Is the patient pregnant?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregnant" id="pregnantYes" value="yes">
+                    <label class="form-check-label" for="pregnantYes">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregnant" id="pregnantNo" value="no">
+                    <label class="form-check-label" for="pregnantNo">
+                        No
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregnant" id="pregnantNotSpecify" value="not_specify">
+                    <label class="form-check-label" for="pregnantNotSpecify">
+                        Do not want to specify
+                    </label>
+                </div>
+            </div>
+        
+            <div id="gynecologicalHistory" style="display: none;">
+                <div class="form-group">
+                    <label>Gynecological history:</label>
+                    <textarea class="form-control" rows="3" id="gynecologicalHistory"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Marital Status:</label>
+            <input type="text" class="form-control" id="maritalStatus" placeholder="Enter Marital Status">
+        </div>
+        
+        <div class="form-group">
+            <label>Mobile Number:</label>
+            <input type="number" class="form-control" id="mobileNumber" placeholder="Enter Mobile Number">
+        </div>
+        
+        <div class="form-group">
+            <label>Known case of Asthma/COPD:</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="asthmaCOPD" id="asthmaCOPDYes" value="yes">
+                <label class="form-check-label" for="asthmaCOPDYes">
+                    Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="asthmaCOPD" id="asthmaCOPDNo" value="no">
+                <label class="form-check-label" for="asthmaCOPDNo">
+                    No
+                </label>
+            </div>
+        </div>
+        
+        <div id="asthmaCOPDOptions" style="display: none;">
+            <div class="form-group">
+                <label>Asthma/COPD History:</label>
+                <textarea class="form-control" rows="3" id="asthmaCOPDHistory"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Do you smoke?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smoking" id="smokingYes" value="yes">
+                <label class="form-check-label" for="smokingYes">
+                    Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smoking" id="smokingNo" value="no">
+                <label class="form-check-label" for="smokingNo">
+                    No
+                </label>
+            </div>
+        </div>
+        
+        <div id="smokingDurationOptions" style="display: none;">
+            <div class="form-group">
+                <label>Smoking Duration:</label>
+                <select class="form-control" id="smokingDuration">
+                    <option value="<1 year">&lt;1 year</option>
+                    <option value="1-3 years">1-3 years</option>
+                    <option value="3-5 years">3-5 years</option>
+                    <option value=">5 years">&gt;5 years</option>
+                </select>
+                <label>Number of cigarettes smoked per day:</label>
+                <input type="number" class="form-control" id="cigarettesPerDay" placeholder="Enter Number of Cigarettes">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Occupational Factors:</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="healthcareWorkers" value="healthcare">
+                <label class="form-check-label" for="healthcareWorkers">
+                    Healthcare workers/Laboratory workers
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="animalHandling" value="animal_handling">
+                <label class="form-check-label" for="animalHandling">
+                    Workers in animal handling/agriculture
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="construction" value="construction">
+                <label class="form-check-label" for="construction">
+                    Construction, mining, and manufacturing
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="hospitality" value="hospitality">
+                <label class="form-check-label" for="hospitality">
+                    Hospitality industry (bartenders and servers, who may be exposed to secondhand smoke)
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="shipyards" value="shipyards">
+                <label class="form-check-label" for="shipyards">
+                    Shipyards, mines, and underground tunnels
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Travel exposure within 2 weeks:</label>
+            <input type="text" class="form-control" id="travelExposure" placeholder="Recent travel to a place with COVID/epidemic">
+        </div>
+        <div class="form-group">
+            <label>Covid testing:</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="covidTesting" id="covidTestingPositive" value="positive">
+                <label class="form-check-label" for="covidTestingPositive">
+                    Positive
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="covidTesting" id="covidTestingNegative" value="negative">
+                <label class="form-check-label" for="covidTestingNegative">
+                    Negative
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+        <h2>Presenting Complaints</h2>
+
+
+
+
+        <div class="form-group">
+            <label for="acuteCoughDuration">Acute cough duration:</label>
+            <input type="text" class="form-control" id="acuteCoughDuration">
+        </div>
+        
+        <div class="form-group">
+            <label>Sputum:</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="sputum" id="sputumYes" value="yes" onclick="sputumFunctions.showDescription()">
+                <label class="form-check-label" for="sputumYes">
+                    Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="sputum" id="sputumNo" value="no" onclick="sputumFunctions.hideDescription()">
+                <label class="form-check-label" for="sputumNo">
+                    No
+                </label>
+            </div>
+            <div id="sputumDescription" style="display: none;">
+                <label for="sputumType">If yes, specify:</label>
+                <select class="form-control" id="sputumType">
+                    <option value="small copious mucoid">small copious mucoid</option>
+                    <option value="Copious">Copious</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>If more than 2 weeks: Rule out </label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="tbCheck" value="tb">
+                <label class="form-check-label" for="tbCheck">
+                     TB
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="asthmaCheck" value="asthma">
+                <label class="form-check-label" for="asthmaCheck">
+                     Asthma
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="copdCheck" value="copd">
+                <label class="form-check-label" for="copdCheck">
+                     COPD
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="othersCheck" value="others">
+                <label class="form-check-label" for="othersCheck">
+                     others
+                </label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="fever">Fever:</label>
+            <select class="form-control" id="fever">
+                <option value="normal">Normal</option>
+                <option value="high">High (>39°C / 102°F)</option>
+            </select>
+        </div>
+        
+        <div class="divide">
+            <label>Chills + rigors:</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsYes" value="yes">
+                <label class="form-check-label" for="chillsYes">
+                    Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    No
+                </label>
+            </div>
+        </div>    
+
+        <div class="divide">
+            <label>Pleuritic chest pain:</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsYes" value="yes">
+                <label class="form-check-label" for="chillsYes">
+                    Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    No
+                </label>
+            </div>
+        </div>
+
+        <div class="divide">
+            <label>Difficulty breathing:</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsYes" value="yes">
+                <label class="form-check-label" for="chillsYes">
+                    Yes (>24 breaths/min)
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    No
+                </label>
+            </div>
+        </div>
+
+        <div class="divide">
+            <label>Sore throat</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsYes" value="yes">
+                <label class="form-check-label" for="chillsYes">
+                    Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    No
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    NA
+                </label>
+            </div>
+        </div>
+
+        <div class="divide">
+            <label>Runny nose</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsYes" value="yes">
+                <label class="form-check-label" for="chillsYes">
+                    Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    No
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    NA
+                </label>
+            </div>
+        </div>
+
+        <div class="divide">
+            <label>Headache </label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsYes" value="yes">
+                <label class="form-check-label" for="chillsYes">
+                    Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    No
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    NA
+                </label>
+            </div>
+        </div>
+
+        <div class="divide">
+            <label> Sneezing</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsYes" value="yes">
+                <label class="form-check-label" for="chillsYes">
+                    Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    No
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    NA
+                </label>
+            </div>
+        </div>
+
+        <div class="divide">
+            <label>Diarrhoea</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsYes" value="yes">
+                <label class="form-check-label" for="chillsYes">
+                    Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    No
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    NA
+                </label>
+            </div>
+        </div>
+
+        <div class="divide">
+            <label>H/O Generalized weakness /malaise</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsYes" value="yes">
+                <label class="form-check-label" for="chillsYes">
+                    Yes ( severe)
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    No
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    NA
+                </label>
+            </div>
+        </div>
+
+        <div class="divide">
+            <label>Nasal blockade</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsYes" value="yes">
+                <label class="form-check-label" for="chillsYes">
+                    Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    No
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    NA
+                </label>
+            </div>
+        </div>
+
+        <div class="divide">
+            <label>Constipation</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsYes" value="yes">
+                <label class="form-check-label" for="chillsYes">
+                    Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    No
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    NA
+                </label>
+            </div>
+        </div>
+
+        <div class="divide">
+            <label>H/O Nausea/ Vomiting</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsYes" value="yes">
+                <label class="form-check-label" for="chillsYes">
+                    Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    No
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    NA
+                </label>
+            </div>
+        </div>
+
+        <div class="divide">
+            <label>Any Other</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsYes" value="yes">
+                <label class="form-check-label" for="chillsYes">
+                    Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    No
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    NA
+                </label>
+            </div>
+        </div>
+        <div class="divide">
+            <label>Mental status</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsYes" value="yes">
+                <label class="form-check-label" for="chillsYes">
+                    Well oriented
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="chills" id="chillsNo" value="no">
+                <label class="form-check-label" for="chillsNo">
+                    *Confusion/*Delirious 
+                </label>
+            </div>
+        </div>
+    </div>    
+    
+    <div>
+        <h2>If inpatient</h2>
+
+        <div class="form-group">
+            <label for="Patientadmittedto">Patient admitted to :</label>
+            <select class="form-control" id="Patientadmittedto">
+              <option>Only Ward</option>
+              <option>Only ICU</option>
+              <option>Admitted to Ward and then to ICU</option>
+              <option>Admitted to ICU and then to Ward</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="admissionDateWard">Date of admission into ward:</label>
+            <input type="date" class="form-control" id="admissionDateWard">
+          </div>
+          <div class="form-group">
+            <label for="admissionDateICU">Date of admission into ICU:</label>
+            <input type="date" class="form-control" id="admissionDateICU">
+          </div>
+          <div class="form-group">
+            <label for="exitDateWard">Date of Exit from ward:</label>
+            <input type="date" class="form-control" id="exitDateWard">
+          </div>
+          <div class="form-group">
+            <label for="exitDateICU">Date of Exit from ICU:</label>
+            <input type="date" class="form-control" id="exitDateICU">
+          </div>
+          <div class="form-group">
+            <label for="reAdmissionDateWard">Date of re-admission into ward:</label>
+            <input type="date" class="form-control" id="reAdmissionDateWard">
+          </div>
+          <div class="form-group">
+            <label for="reExitDateWard">Date of re-exit from ward:</label>
+            <input type="date" class="form-control" id="reExitDateWard">
+          </div>
+          <div class="form-group">
+            <label for="lengthOfStay">Length of hospital stay (in Days):</label>
+            <input type="number" class="form-control" id="lengthOfStay">
+          </div>
+          <div class="form-group">
+            <label for="devicesInSitu">Devices in-situ:</label>
+            <select multiple class="form-control" id="devicesInSitu">
+              <option>Foley's catheter</option>
+              <option>Nasogastric tube</option>
+              <option>Central Venous line</option>
+              <option>Intubated/tracheostomy</option>
+              <option>None</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="surgicalStatus">Surgical Status:</label>
+            <select class="form-control" id="surgicalStatus">
+              <option>Pre-operation</option>
+              <option>Post-operation</option>
+              <option>NA</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="prophylacticAntibioticUsed">If post-surgery, prophylactic antibiotic used:</label>
+            <select class="form-control" id="prophylacticAntibioticUsed">
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="antibioticName">Name of prophylactic antibiotic:</label>
+            <input type="text" class="form-control" id="antibioticName">
+          </div>
+          <div class="form-group">
+        <label for="urineCulturePerformed">Urine culture is performed:</label>
+        <select class="form-control" id="urineCulturePerformed" onchange="showCultureFields()">
+          <option value="no">Yes</option>
+          <option value="yes">No</option>
+          <option value="na">NA</option>
+        </select>
+      </div>
+      <div class="form-group" id="cultureResultField" style="display: none;">
+        <label for="cultureResult">Culture result:</label>
+        <select class="form-control" id="cultureResult">
+          <option>Positive</option>
+          <option>Negative</option>
+        </select>
+      </div>
+      <div id="organismFields" style="display: none;">
+        <div class="form-group">
+          <label for="organismName">Name of the organism:</label>
+          <input type="text" class="form-control" id="organismName">
+        </div>
+        <div class="form-group">
+          <label for="astMethod">AST method:</label>
+          <input type="text" class="form-control" id="astMethod">
+        </div>
+        <div class="form-group">
+          <label for="antibioticResistancePattern">Antibiotic resistance and susceptibility patterns:</label>
+          <textarea class="form-control" id="antibioticResistancePattern" rows="3"></textarea>
+        </div>
+      </div>
+
+    </div>
+    
+    <div>
+        <h2>Past Infection Data </h2>
+
+        <div class="form-group">
+            <label for="previousRTI">H/O previous RTI (in last three months):</label>
+            <select class="form-control" id="previousRTI" onchange="showAntibioticsField()">
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+          <div class="form-group" id="antibioticsField" style="display: none;">
+            <label for="antibioticsTaken">Antibiotics taken:</label>
+            <select class="form-control" id="antibioticsTaken">
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+          <div class="form-group" id="antibioticNameField" style="display: none;">
+            <label for="antibioticName">Name of the antibiotic:</label>
+            <input type="text" class="form-control" id="antibioticName">
+         </div>
+          <div class="form-group">
+            <label for="documentationRTI">Documentation of infection within the past 1 year (RTI):</label>
+            <select class="form-control" id="documentationRTI">
+              <option>MDR</option>
+              <option>ESBL</option>
+              <option>CRE</option>
+              <option>None</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="tuberculosis">H/O tuberculosis:</label>
+            <select class="form-control" id="tuberculosis" onchange="showTuberculosisTypeField()">
+              <option>Yes</option>
+              <option>No</option>
+              <option>NA</option>
+            </select>
+          </div>
+          <div class="form-group" id="tuberculosisTypeField" style="display: none;">
+            <label for="tuberculosisType">Type of H/O tuberculosis:</label>
+            <select class="form-control" id="tuberculosisType">
+              <option>Pulmonary</option>
+              <option>Extra Pulmonary</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="treatmentHistory">Treatment history:</label>
+            <textarea class="form-control" id="treatmentHistory" rows="3"></textarea>
+          </div>
+        
+    </div>
+
+    <div>
+        <h2> Hospital Admission history</h2>
+        <div class="form-group">
+            <label for="admissionsWithinYear">Hospital admissions within 1 year:</label>
+            <select class="form-control" id="admissionsWithinYear">
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+          <div class="form-group" id="admissionFrequencyField" style="display: none;">
+            <label for="admissionFrequency">No. of times:</label>
+            <select class="form-control" id="admissionFrequency">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>More than 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <h5>Last Admission Details (Latest):</h5>
+            <div class="form-group">
+              <label for="hospitalLocation">Hospital location at time of infection:</label>
+              <select class="form-control" id="hospitalLocation">
+                <option>Public</option>
+                <option>Private</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="reason">Reason:</label>
+              <select class="form-control" id="reason">
+                <option>RTI</option>
+                <option>Non RTI</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="surgery">Surgery:</label>
+              <select class="form-control" id="surgery">
+                <option>With surgery</option>
+                <option>Without surgery</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="hospitalizationDuration">Duration of hospitalization (no. of days):</label>
+              <input type="number" class="form-control" id="hospitalizationDuration">
+            </div>
+            <div class="form-group">
+              <label for="devicesInSitu">Devices in-situ:</label>
+              <select class="form-control" id="devicesInSitu">
+                <option>Catheterized</option>
+                <option>Intubated</option>
+                <option>NA</option>
+              </select>
+            </div>
+            <div class="form-group" id="catheterDurationField" style="display: none;">
+              <label for="catheterDuration">If Catheterized, Duration of catheter (no. of days):</label>
+              <input type="number" class="form-control" id="catheterDuration">
+            </div>
+          </div>
+          <div class="form-group">
+            <h5>Second last Admission Details:</h5>
+            <div class="form-group">
+              <label for="hospitalLocation">Hospital location at time of infection:</label>
+              <select class="form-control" id="hospitalLocation">
+                <option>Public</option>
+                <option>Private</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="reason">Reason:</label>
+              <select class="form-control" id="reason">
+                <option>RTI</option>
+                <option>Non RTI</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="surgery">Surgery:</label>
+              <select class="form-control" id="surgery">
+                <option>With surgery</option>
+                <option>Without surgery</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="hospitalizationDuration">Duration of hospitalization (no. of days):</label>
+              <input type="number" class="form-control" id="hospitalizationDuration">
+            </div>
+            <div class="form-group">
+              <label for="devicesInSitu">Devices in-situ:</label>
+              <select class="form-control" id="devicesInSitu">
+                <option>Catheterized</option>
+                <option>Intubated</option>
+                <option>NA</option>
+              </select>
+            </div>
+            <div class="form-group" id="catheterDurationField" style="display: none;">
+              <label for="catheterDuration">If Catheterized, Duration of catheter (no. of days):</label>
+              <input type="number" class="form-control" id="catheterDuration">
+            </div>
+          </div>
+    </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- Link Bootstrap JS (optional if you're not using Bootstrap JS features) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var femaleRadio = document.getElementById('female');
+        var pregnantOptions = document.getElementById('femaleOptions');
+        
+        femaleRadio.addEventListener('change', function () {
+            if (this.checked) {
+                pregnantOptions.style.display = 'block';
+            } else {
+                pregnantOptions.style.display = 'none';
+            }
+        });
+
+        var pregnantYesRadio = document.getElementById('pregnantYes');
+        var gynecologicalHistory = document.getElementById('gynecologicalHistory');
+        
+        pregnantYesRadio.addEventListener('change', function () {
+            if (this.checked) {
+                gynecologicalHistory.style.display = 'block';
+            } else {
+                gynecologicalHistory.style.display = 'none';
+            }
+        });
+
+        var asthmaCOPDYesRadio = document.getElementById('asthmaCOPDYes');
+        var asthmaCOPDOptions = document.getElementById('asthmaCOPDOptions');
+        
+        asthmaCOPDYesRadio.addEventListener('change', function () {
+            if (this.checked) {
+                asthmaCOPDOptions.style.display = 'block';
+            } else {
+                asthmaCOPDOptions.style.display = 'none';
+            }
+        });
+
+        var asthmaCOPDNoRadio = document.getElementById('asthmaCOPDNo');
+        asthmaCOPDNoRadio.addEventListener('change', function () {
+            if (this.checked) {
+                asthmaCOPDOptions.style.display = 'none';
+            }
+        });
+
+        var smokingYesRadio = document.getElementById('smokingYes');
+        var smokingOptions = document.getElementById('smokingDurationOptions');
+        
+        smokingYesRadio.addEventListener('change', function () {
+            if (this.checked) {
+                smokingOptions.style.display = 'block';
+            } else {
+                smokingOptions.style.display = 'none';
+            }
+        });
+
+        var smokingNoRadio = document.getElementById('smokingNo');
+        smokingNoRadio.addEventListener('change', function () {
+            if (this.checked) {
+                smokingOptions.style.display = 'none';
+            }
+        });
+
+        var sputumYesRadio = document.getElementById('sputumYes');
+        var sputumDescription = document.getElementById('sputumDescription');
+
+        sputumYesRadio.addEventListener('change', function () {
+            if (this.checked) {
+                sputumDescription.style.display = 'block';
+            } else {
+                sputumDescription.style.display = 'none';
+        }
+        });
+
+        var sputumNoRadio = document.getElementById('sputumNo');
+        sputumNoRadio.addEventListener('change', function () {
+            if (this.checked) {
+                 sputumDescription.style.display = 'none';
+             }
+        });
+        var urineCulturePerformed = document.getElementById("urineCulturePerformed");
+        var cultureResultField = document.getElementById("cultureResultField");
+        var organismFields = document.getElementById("organismFields");
+
+        urineCulturePerformed.addEventListener("change", function() {
+            if (this.value === "yes") {
+            cultureResultField.style.display = "block";
+            } else {
+            cultureResultField.style.display = "none";
+            organismFields.style.display = "none";
+            }
+        });
+
+        document.getElementById("cultureResult").addEventListener("change", function() {
+            if (this.value === "Positive") {
+            organismFields.style.display = "block";
+            } else {
+            organismFields.style.display = "none";
+            }
+        });
+
+        var previousRTI = document.getElementById("previousRTI");
+        var antibioticsField = document.getElementById("antibioticsField");
+        var antibioticNameField = document.getElementById("antibioticNameField");
+
+        previousRTI.addEventListener("change", function() {
+            if (this.value === "Yes") {
+                antibioticsField.style.display = "block";
+            } else {
+                antibioticsField.style.display = "none";
+                antibioticNameField.style.display = "none";
+            }
+        });
+
+        var antibioticsTaken = document.getElementById("antibioticsTaken");
+        var antibioticNameField = document.getElementById("antibioticNameField");
+
+        antibioticsTaken.addEventListener("change", function() {
+            if (this.value === "Yes") {
+                antibioticNameField.style.display = "block";
+            } else {
+                antibioticNameField.style.display = "none";
+            }
+        });
+
+        var admissionsWithinYear = document.getElementById("admissionsWithinYear");
+        var admissionFrequencyField = document.getElementById("admissionFrequencyField");
+
+        admissionsWithinYear.addEventListener("change", function() {
+            if (this.value === "Yes") {
+            admissionFrequencyField.style.display = "block";
+            } else {
+            admissionFrequencyField.style.display = "none";
+            }
+        });
+
+        var devicesInSitu = document.getElementById("devicesInSitu");
+        var catheterDurationField = document.getElementById("catheterDurationField");
+
+        devicesInSitu.addEventListener("change", function() {
+            if (this.value === "Catheterized") {
+            catheterDurationField.style.display = "block";
+            } else {
+            catheterDurationField.style.display = "none";
+            }
+        });
+    });
+    
+</script>
+
+</body>
+</html>
